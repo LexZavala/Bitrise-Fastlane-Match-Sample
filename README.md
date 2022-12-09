@@ -57,4 +57,6 @@
 
 4. Run your build. (Make sure your `Fastlane Match` step is run before your `Xcode Archive` Step for code signing to work)
 
+![Workflow](https://github.com/LexZavala/Bitrise-Fastlane-Match-Sample/raw/main/workflow.png)
+
 ----
