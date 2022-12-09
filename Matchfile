@@ -1,0 +1,10 @@
+# This is the repository containing all code signing files
+git_url("https://github.com/LexZavala/test-certificate.git")
+
+storage_mode("git")
+
+type("development") # The default type, can be: appstore, adhoc, enterprise or development
+
+# These should be updated to match your own settings
+app_identifier(["io.bitrise.FastlaneMatchSample"])
+username("alexis.zavala@bitrise.io") # Your Apple Developer Portal username
