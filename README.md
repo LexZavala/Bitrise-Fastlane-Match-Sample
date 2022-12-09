@@ -1,5 +1,13 @@
 # Bitrise-Fastlane-Match-Sample
 
+## Install Fastlane
+
+```brew install fastlane```
+
+## Verify Fastlane is installed
+
+```fastlane -v```
+
 ## Fastlane Match Docs
 
 [Fastlane Match Docs](https://docs.fastlane.tools/actions/match/)
