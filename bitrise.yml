@@ -1,0 +1,36 @@
+---
+format_version: '11'
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+project_type: ios
+workflows:
+  primary:
+    steps:
+    - activate-ssh-key@4: {}
+    - git-clone@6: {}
+    - fastlane-match@0:
+        inputs:
+        - git_branch: master
+        - app_id: io.bitrise.FastlaneMatchSample
+        - decrypt_password: "$MATCH_PASSWORD"
+        - team_id: "$TEAM_ID"
+        - git_url: git@github.com:LexZavala/test-certificate.git
+    - xcode-archive@4: {}
+    - deploy-to-bitrise-io@2: {}
+meta:
+  bitrise.io:
+    stack: osx-xcode-14.1.x
+    machine_type_id: g2.4core
+app:
+  envs:
+  - opts:
+      is_expand: false
+    BITRISE_PROJECT_PATH: FastlaneMatchSample.xcodeproj
+  - opts:
+      is_expand: false
+    BITRISE_SCHEME: FastlaneMatchSample
+  - opts:
+      is_expand: false
+    BITRISE_DISTRIBUTION_METHOD: development
+  - opts:
+      is_expand: false
+    TEAM_ID: DT2C2FZ7U2
